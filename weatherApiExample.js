@@ -1,7 +1,7 @@
 //Weather_API
 
 //README
-//API_Key: 8c1dd98738c94a3ebc6c821421c0365c
+//API_Key:
 
 //Endpoint_for_data_retrieval:
 //https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
@@ -36,7 +36,7 @@ const getData = async (url) => {
 };
 
 // Usage example:
-const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${33.1983}&lon=${96.6389}&exclude=${''}&appid=${apiKey}`;
+const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${33.1983}&lon=${96.6389}&appid=${apiKey}`;
 
 getData(apiUrl)
   .then(result => {
