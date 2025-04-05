@@ -56,10 +56,10 @@ getLocData(apiUrlLoc)
     const lat = result[0].lat
     const lon = result[0].lon
     // weather data endpoint:
-    const apiUrlWeather = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const apiUrlWeather = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
     getWeatherData(apiUrlWeather)
       .then(result => {
-        console.log('Data fetched successfully:',result)
+        console.log('Data fetched successfully:',result.current.weather[0])
       })
       .catch(error => {
         console.error('Error processing data:', error)
