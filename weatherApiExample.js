@@ -59,7 +59,9 @@ getLocData(apiUrlLoc)
     const apiUrlWeather = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
     getWeatherData(apiUrlWeather)
       .then(result => {
-        console.log('Data fetched successfully:',result.current.weather[0])
+        const currentWeatherTemp = result.current.temp
+        const currentWeatherDescription = result.current.weather[0].description
+        console.log(`Data fetched successfully: The weather in ${city} today is ${currentWeatherDescription}, and the temperature is ${currentWeatherTemp} degrees Farenheit`)
       })
       .catch(error => {
         console.error('Error processing data:', error)
